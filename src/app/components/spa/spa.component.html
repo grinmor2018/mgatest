@@ -1,4 +1,6 @@
 <div class="container bg-dark p-2 text-white">
+  <h1 class="display-3 text-success">GoldenPark</h1>
+  <hr>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
       <a
@@ -70,11 +72,60 @@
     </div>
   </nav>
   <div
-    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    class="row rounded border border-4 mt-2 p-1"
     id="imagenes"
     *ngIf="imagenes"
   >
-    <div class="carousel slide p-2" data-bs-ride="carousel">
+    <div class="row mx-auto my-2">
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img1.jpg"
+        class="img-fluid float-start"
+        alt="..."
+      />
+      </div>
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img2.jpg"
+        class="img-fluid float-end"
+        alt="..."
+      />
+      </div>
+    </div>
+    <div class="row mx-auto my-2">
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img3.jpg"
+        class="img-fluid float-start"
+        alt="..."
+      />
+      </div>
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img4.jpg"
+        class="img-fluid float-end"
+        alt="..."
+      />
+      </div>
+    </div>
+    <div class="row mx-auto my-2">
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img5.jpg"
+        class="img-fluid float-start"
+        alt="..."
+      />
+      </div>
+      <div class="col-6 text-center p-2 border border-success border-3">
+        <img
+        src="../../../assets/images/img6.jpg"
+        class="img-fluid float-end"
+        alt="..."
+      />
+      </div>
+    </div>
+
+    <!-- <div class="carousel slide p-2" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
@@ -91,7 +142,7 @@
           />
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <div
@@ -146,7 +197,7 @@
   >
     <div class="col-4"></div>
     <div class="col-4 text-center p-2">
-      <button class="btn btn-success" (click)="openModal(contingut)">
+      <button class="btn btn-outline-success" (click)="openModal(contingut)">
         ¡¡Púlsame!!
       </button>
     </div>
