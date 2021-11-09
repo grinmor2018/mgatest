@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mgatest-f0996": {
+      "hosting": {
+        "goldenPark": [
+          "mgatest-f0996"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mgatest-f0996"
+  }
+}

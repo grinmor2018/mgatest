@@ -103,6 +103,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "goldenPark:build:production",
+            "firebaseProject": "mgatest-f0996",
+            "firebaseHostingSite": "mgatest-f0996"
+          }
         }
       }
     }
