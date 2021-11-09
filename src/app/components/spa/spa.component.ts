@@ -75,6 +75,7 @@ export class SpaComponent implements OnInit {
     this.links= false;
     this.popup= false;
     this.formularios= false;
+    this.api= false;
   }
 
 }
