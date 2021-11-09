@@ -1,0 +1,207 @@
+<div class="container bg-dark p-2 text-white">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a
+        class="navbar-brand"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >Menú</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Imágenes, vídeos, links
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" (click)="abrir('imagenes')"
+                  >Imágenes</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="abrir('video')">Vídeos</a>
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="abrir('links')">Links</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="abrir('popup')"
+              >Popup</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              (click)="abrir('formularios')"
+              >Formulario</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              (click)="abrir('api')"
+              >Api</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="imagenes"
+    *ngIf="imagenes"
+  >
+    <div class="carousel slide p-2" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="../../../assets/images/img1.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../../../assets/images/img3.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="video"
+    *ngIf="video"
+  >
+    <div class="embed-responsive embed-responsive-16by9 p-2 text-center">
+      <iframe
+        class="embed-responsive-item"
+        width="vw-100"
+        height="vh-100"
+        src="https://www.youtube.com/embed/rlELQfKvOwo"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="links"
+    *ngIf="links"
+  >
+    <div class="list-group p-2">
+      <a
+        href="https://www.mga.es"
+        class="list-group-item list-group-item-action"
+        aria-current="true"
+      >
+        MGA
+      </a>
+      <a
+        href="https://github.com/grinmor2018"
+        class="list-group-item list-group-item-action"
+        >Github</a
+      >
+      <a
+        href="https://stackoverflow.com/"
+        class="list-group-item list-group-item-action"
+        >Stackoverflow</a
+      >
+    </div>
+  </div>
+
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="popup"
+    *ngIf="popup"
+  >
+    <div class="col-4"></div>
+    <div class="col-4 text-center p-2">
+      <button class="btn btn-success" (click)="openModal(contingut)">
+        ¡¡Púlsame!!
+      </button>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="popup"
+    *ngIf="formularios"
+  >
+    <form [formGroup]="form" class="d-flex wd-75 p-2" (submit)="guardar()">
+      <input
+        class="form-control me-2"
+        type="text"
+        placeholder="Nombre"
+        aria-label="Añade"
+        formControlName="name"
+        required
+        (keyup.enter)="guardar()"
+      />
+      <button class="btn btn-outline-success" type="submit">Guardar</button>
+    </form>
+  </div>
+
+  <div
+    class="row align-items-center rounded border border-4 mt-2 wd-75"
+    id="api"
+    *ngIf="api"
+  >
+    <div class="embed-responsive embed-responsive p-2 text-center">
+      <iframe class="responsive-iframe" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Carrer%20dels%20Fargaires,%201,%2008290%20Cerdanyola%20del%20Vall%C3%A8s,%20Barcelona+(Mga)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="600" frameborder="0"><a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/">Dibuja un circulo Google Maps</a></iframe>
+    </div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<ng-template #contingut let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Popup</h4>
+  </div>
+  <div class="modal-body">
+    <p>Prueba de popup!!</p>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="modal.close('Close click')"
+    >
+      Cerrar
+    </button>
+  </div>
+</ng-template>
